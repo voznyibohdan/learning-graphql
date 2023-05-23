@@ -28,9 +28,9 @@ export const schema = buildSchema(`
     }
     
     type Query {
-        getAllUsers: [User]
-        getUserById(id: ID): User 
-        getPosts: [Post]
+        users: [User]
+        user(id: ID): User 
+        posts: [Post]
     }
     
     type Mutation {

@@ -45,13 +45,13 @@ export type PostInput = {
 
 export type Query = {
   __typename?: 'Query';
-  posts?: Maybe<Array<Maybe<Post>>>;
-  user?: Maybe<User>;
-  users?: Maybe<Array<Maybe<User>>>;
+  getAllUsers?: Maybe<Array<Maybe<User>>>;
+  getPosts?: Maybe<Array<Maybe<Post>>>;
+  getUserById?: Maybe<User>;
 };
 
 
-export type QueryUserArgs = {
+export type QueryGetUserByIdArgs = {
   id?: InputMaybe<Scalars['ID']>;
 };
 
@@ -110,13 +110,13 @@ export type PostInput = {
 
 export type Query = {
   __typename?: 'Query';
-  posts?: Maybe<Array<Maybe<Post>>>;
-  user?: Maybe<User>;
-  users?: Maybe<Array<Maybe<User>>>;
+  getAllUsers?: Maybe<Array<Maybe<User>>>;
+  getPosts?: Maybe<Array<Maybe<Post>>>;
+  getUserById?: Maybe<User>;
 };
 
 
-export type QueryUserArgs = {
+export type QueryGetUserByIdArgs = {
   id?: InputMaybe<Scalars['ID']>;
 };
 

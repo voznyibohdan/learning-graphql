@@ -8,22 +8,29 @@ import {IPost, IPostInput, IUser, IUserInput} from './types';
 
 // emulation of an array of users / posts from the database :)
 const users: IUser[] = [
-	{id: 'qw876rq0w9e8r7', name: 'Bohdan', age: 21, posts: []}
+	{id: 'qw876rq0w9e8r7', name: 'Bohdan', age: 21, posts: []},
+	{id: 'qw876rq0w9e8r8', name: 'Petro', age: 21, posts: []},
+	{id: 'qw876rq0w9e8r9', name: 'Stepan', age: 21, posts: []},
+	{id: 'qw876rq0w9e8r0', name: 'Ivan', age: 21, posts: []},
+	{id: 'qw876rq0w9e8r1', name: 'Sergiy', age: 21, posts: []},
+	{id: 'qw876rq0w9e8r13', name: 'Oleh', age: 21, posts: []},
 ];
 const posts: IPost[] = [
-	{id: 'qwerqwe', userId: 'qw876rq0w9e8r7', post: 'lorem lorem lorem', title: 'post tile'}
+	{id: 'qwerqwe', userId: 'qw876rq0w9e8r7', post: 'lorem lorem lorem', title: '1 post tile'},
+	{id: 'qwerqwe1', userId: 'qw876rq0w9e8r7', post: 'lorem lorem lorem', title: '2 post tile'},
+	{id: 'qwerqwe2', userId: 'qw876rq0w9e8r7', post: 'lorem lorem lorem', title: '3 post tile'},
 ];
 
 const root =  {
-	getAllUsers() {
+	users() {
 		return users;
 	},
 
-	getUserById(id: string): IUser | undefined {
+	user(id: string): IUser | undefined {
 		return users.find((user) => user.id === id);
 	},
 
-	getPosts(): IPost[] {
+	posts(): IPost[] {
 		return posts;
 	},
 
@@ -35,7 +42,7 @@ const root =  {
 
 		posts.push(post);
 
-		const user = this.getUserById(input.userId);
+		const user = this.user(input.userId);
 		user?.posts?.push(post);
 
 		return post;
